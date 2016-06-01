@@ -36,10 +36,10 @@ public class PicoyPlaca {
 				JOptionPane.showMessageDialog(null, "Por favor introducir una fecha valida separandola con / y usando formato de numero como se indica");
 				fecha=JOptionPane.showInputDialog("Fecha(dd/mm/aaaa) ");
 			}else if(fecha.length()!=10 || fecha.charAt(2)!='/' || fecha.charAt(5)!='/'){
-				JOptionPane.showMessageDialog(null, "Por favor validar que separe los dias, meses y año con / y completar con cero los dias y meses menores de 10");
+				JOptionPane.showMessageDialog(null, "Por favor validar que separe los dias, meses y aÃ±o con / y completar con cero los dias y meses menores de 10");
 				fecha=JOptionPane.showInputDialog("Fecha(dd/mm/aaaa) ");	
 			}else if(Integer.parseInt(fecha.substring(0, 2))>31 || Integer.parseInt(fecha.substring(3, 5))>12 || Integer.parseInt(fecha.substring(8, 10))<16){
-				JOptionPane.showMessageDialog(null, "Por favor introducir los rangos correctos de los dias, meses o año");
+				JOptionPane.showMessageDialog(null, "Por favor introducir los rangos correctos de los dias, meses o aÃ±o");
 				fecha=JOptionPane.showInputDialog("Fecha(dd/mm/aaaa) ");
 			}else{
 				break;
@@ -127,6 +127,7 @@ public class PicoyPlaca {
 		int tiempo=(hora*60)+minutos;
 		
 		//Condicion que evalua si el vehiculo puede circular en el dia y la hora indicadas segun su matricula
+		//el pico y placa se aplica de lunes a viernes de 07:00 a 09:30 y de 16:00 a 19:30
 		if(dig_matricula=='1' || dig_matricula=='2')
 		{
 			if(dia_semana==1)
